@@ -1,0 +1,588 @@
+.container{
+    max-width: 120rem;
+    margin: 0 auto;
+    // background: var(--color-white-1);
+}
+.header{
+    background: var(--color-blue-2);
+    height: 7rem;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        @media only screen and (max-width: $bp-iphonex){
+            flex-direction: column;
+            justify-content: center;
+        }
+       
+    }
+    @media only screen and (max-width: $bp-iphonex){
+        height: auto;
+    }
+}
+.logo-box{
+    .heading-logo{
+        font-size: 3rem;
+        a{
+            text-decoration: none;
+            color:#fff;
+        }
+       
+    }
+    @media only screen and(max-width: $bp-ipad){
+        margin-left: 2rem;
+    }   
+    @media only screen and (max-width: $bp-iphonex){
+         border-bottom: 1px solid var(--color-white-1);
+         width: 100%;
+         text-align: center;
+      }
+}
+.list{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    align-self: stretch;
+    @media only screen and (max-width: $bp-iphonex){
+       flex-direction: column;
+    }
+    &__item{
+        display: flex;
+        align-items: center;
+        align-self: stretch;
+        @media only screen and (max-width: $bp-iphonex){
+            flex-direction: column;
+            padding: .5rem;            
+         }
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        padding: 0 1.6rem;
+        &:not(:last-child){
+            margin-right: 2rem;
+            @media only screen and (max-width: $bp-iphonex){
+               margin: 0;      
+             } 
+        }
+       
+        &__link{
+            text-decoration: none;
+            color:#fff;
+            // height: 100%;
+            // align-self: stretch;
+           
+        }
+        &:hover{
+            background: var(--color-blue-1);
+            cursor: pointer;
+        }
+    }
+    
+}
+.bg{
+    height: 95vh;
+    position: relative;
+    background:linear-gradient(to right bottom, rgba($color-1, 0.8), rgba($color-2,0.8)), url('../../img/bg.jpg') no-repeat center center/cover;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    // overflow: hidden;
+    @media only screen and (max-width: $bp-iphonex){
+       height: 75vh;
+       clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
+    }
+    &__text-box{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+       
+       
+    }
+
+    &__heading{
+        font-size: 5.5rem;
+        letter-spacing: 1.1rem;
+        color: var(--color-white-2);
+        animation: moveInLeft 1s ease-out;
+    }
+    &__paragraph{
+        font-size: 1.4rem;
+        // margin-bottom: 3.8rem;
+        letter-spacing: 0.1rem;
+        color: var(--color-white-2);
+        animation: moveInRight 1s ease-out;
+    }
+}
+
+.btn-bg{
+    text-decoration: none;
+    background: var(--color-white-2);
+    padding: 2rem 2.8rem;
+    font-size: 1.5rem;
+    border-radius: 100px;
+    border:none;
+    color: var(--color-blue-2);
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    display: inline-block;
+    margin-top: 2rem;
+    animation: moveInBottom 1s ease-out;
+    &:focus{
+        outline: none;
+    }
+    &:hover{
+        background: var(--color-white-1);
+        transition: all .2s;
+        box-shadow: 0 .5rem 2rem rgba(#000, 0.15);
+        transform: translateY(-2px);
+    }
+    &:active{
+        box-shadow: 0 .5rem 2rem rgba(#000, 0.15);
+        transform: translateY(0);
+    }
+}
+
+
+.section-about{
+    padding: 10rem 0;
+    margin-bottom: 10rem;
+    @media only screen and(max-width: $bp-ipad){
+        padding: 4rem 0;
+    }
+    @media only screen and (max-width: $bp-iphonex){
+        margin: 0;
+        padding: 7rem 0;
+         }
+    .container{
+        display: flex;
+        @media only screen and (max-width: $bp-iphonex){
+            flex-direction: column;
+            }
+
+        .office{
+            flex: 1;
+            position: relative;
+            img{
+                width: 45rem;
+                // height: auto;
+                margin: 2rem;
+                box-shadow: 0 1rem 4rem rgba(0,0,0,0.1);
+                @media only screen and(max-width: $bp-ipad){
+                   display: none;
+                }
+                @media only screen and (max-width: $bp-iphonex){
+                    display: none;
+                }
+            }
+        }
+        
+    }
+
+
+
+    .about{
+        display: flex;
+        flex-direction: column;
+
+        &__primary{
+            padding: 3rem;
+            background: var(--color-white-1);
+            margin: 2rem;
+            box-shadow: 0 1rem 4rem rgba(0,0,0,0.1);
+            border-radius: 5px;
+            @media only screen and(max-width: $bp-ipad){
+               margin: .5rem;
+             }
+            @media only screen and (max-width: $bp-iphonex){
+              display: none;
+            }
+        }
+
+
+        &__secondary{
+            flex: 1;
+            padding: 3rem;
+            background: var(--color-white-1);
+            margin: 2rem;
+            box-shadow: 0 1rem 4rem rgba(0,0,0,0.1);
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @media only screen and(max-width: $bp-ipad){
+                margin: .5rem;
+              }
+            @media only screen and (max-width: $bp-iphonex){
+                margin: .8rem;
+             }
+
+            &__owner img{
+                width: 15rem;
+                height: 15rem;
+                border-radius: 100px;
+            }
+
+            &__owner-info{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+}
+
+.btn-secondary{
+    text-decoration: none;
+    padding: .5rem 1.5rem;
+    color: var(--color-blue-2);
+    font-size: 1.5rem;
+    border-radius: 100px;
+    background: var(--color-blue-2);
+    color: var(--color-white-1);
+    display: inline-block;
+    
+    &:hover{
+        // background: var(--color-blue-1);
+        box-shadow: 0 .5rem 2rem rgba(#000, 0.15);
+        transform: translateY(-2px);
+        transition: all .2s ease-out;
+    }
+    &:active{
+        box-shadow: 0 .5rem 2rem rgba(#000, 0.15);
+        transform: translateY(0);
+    }
+}
+
+
+.section-services{
+    background: var(--color-blue-2);
+    padding: 5rem;
+    transform: skewY(-7deg);
+    @media only screen and(max-width: $bp-ipad){
+        padding: 0;
+      }
+    @media only screen and (max-width: $bp-iphonex){
+        padding: 0.2rem;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: skewY(7deg);
+        padding-bottom: 11rem;
+        .services{
+            display: flex;
+
+            @media only screen and(max-width: $bp-ipad){
+                flex-direction: column;
+                
+                // font-size: 1.7rem;
+              }
+            @media only screen and (max-width: $bp-iphonex){
+                flex-direction: column;
+            }
+            // margin: 2rem;
+
+            }
+
+            .service{
+            background: var(--color-white-1);
+            padding: 1.9rem 2rem;
+            margin: .5rem;
+            border-radius: 5px;
+            box-shadow: 0 .5rem 2rem rgba(#000, 0.15);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            i{
+                font-size: 6rem;
+                color: var(--color-blue-2);
+                padding: 1.5rem;
+            }
+
+            &:hover{
+                transform: translateY(-5px);
+                transition: all .2s;
+            }
+            .paragraph{
+                text-align: justify;
+                @media only screen and(max-width: $bp-ipad){
+                    font-size: 1.8rem;
+                  }
+            }
+        }
+    }
+
+
+}
+
+
+.section-cars{
+    padding: 10rem 0;
+    @media only screen and(max-width: $bp-ipad){
+        padding: 0 0.5rem;
+      }
+    @media only screen and (max-width: $bp-iphonex){
+        padding: 0;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+       .offer{
+           display: flex;
+            flex-direction: column;
+           &__brands{
+               display: flex;
+               @media only screen and (max-width: $bp-iphonex){
+                flex-direction: column;
+                padding: 0.2rem;
+            }
+        //    flex-direction: column;
+            &__brand{
+                padding: 2rem 3rem;
+                background: #fff;
+                margin: .3rem;
+                border-radius: 5px;
+                box-shadow: 0 .5rem 2rem rgba(#000, 0.15);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                .logo{
+                    // align-self: stretch;
+                    display: flex;
+                    align-items: center;
+                    height: 15rem;
+                    width:  15rem;
+                    border-right: 1px solid var(--color-white-1);
+                    padding-right: .5rem;
+                    img{
+                        width: 100%;
+                        height: auto;
+                    }
+                   margin-right: 1.4rem;
+                }
+
+                .description{
+                    p{
+                        font-size: 1.4rem;
+                        font-weight: 400;
+                        margin-bottom: 1rem;
+                        padding-bottom: 1.3rem;
+                        padding-top: 1rem;
+                        color: var(--color-blue-2);
+                        border-bottom: 1px solid var(--color-white-1);
+                    }
+                    &__list{
+                        list-style: none;
+                        color: var(--color-blue-2);
+                        padding: 1rem;
+
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        font-size: 1.4rem;
+                        &__item{
+                            flex: 0 0 50%;
+                            margin-bottom: .7rem;
+                        }
+                    }
+                }
+            }
+           }
+       }
+    }
+}
+
+
+.section-contact{
+    height: 50rem;
+    background:linear-gradient(to right bottom, rgba($color-1, 0.8), rgba($color-2,0.8)), url('../../img/key.jpg') no-repeat center center/cover;
+    @media only screen and(max-width: $bp-ipad){
+        padding: 0 0.8rem;
+        height: auto;
+      }
+    @media only screen and (max-width: $bp-iphonex){
+        height: auto;
+        padding: .2rem;
+    }
+    .container{
+        display: flex;
+        align-items: center;
+       
+        @media only screen and (max-width: $bp-iphonex){
+            flex-direction: column;
+            padding: 0.2rem;
+        }
+        .contact{
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 60%;
+
+            .paragraph-phone{
+                font-size: 1.7rem;
+                color: var(--color-white-1);
+                padding: 0 1rem;
+            }
+
+            .paragraph-email{
+                font-size: 1.7rem;
+                color: var(--color-white-1);
+                padding: 0 1rem;
+            }
+            i{
+                margin-right: 1rem;
+            }
+        }
+
+
+        .contact__form{
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            margin-top: 7rem;
+
+
+            &__input{
+                width: 100%;
+                padding: 1.7rem 1rem;
+                border:none;
+                border-radius: 3px;
+                
+                &:not(:last-child){
+                    margin-bottom: 1.4rem;
+                }
+                &:focus{
+                    outline: none;
+                }
+            }
+
+            textarea{
+                width: 100%;
+                height: 10rem;
+                padding: 1.7rem 1rem;
+                border-radius: 3px;
+                margin-bottom: 1.4rem;
+
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+    }
+   .btn-submit{
+    text-decoration: none;
+    background: var(--color-white-1);
+    padding: 1.2rem 1.8rem;
+    font-size: 1.5rem;
+    // border-radius: 100px;
+    border: none;
+    color: var(--color-blue-2);
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    display: block;
+    width: 100%;
+
+    &:focus{
+        outline: none;
+    }
+    &:hover{
+        cursor: pointer;
+        transform: translateY(-1px);
+        transition: all .2s ease-out;
+    }
+    &:active{
+        transform: translateY(0);
+       
+    }
+   }
+}
+
+
+.footer{
+    background: var(--color-blue-2);
+    color: var(--color-white-1);
+    padding: 2.5rem 1.5rem;
+    height: 15rem;
+    @media only screen and(max-width: $bp-ipad){
+        height: auto;
+      }
+    @media only screen and (max-width: $bp-iphonex){
+        height: auto;
+    }
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 3rem;
+        @media only screen and(max-width: $bp-ipad){
+           margin: 0;
+          }
+        @media only screen and (max-width: $bp-iphonex){
+            flex-direction: column;
+            padding: 0.2rem;
+            margin-top: 0;
+        }
+        .logo{
+            .heading-logo{
+                
+                a{
+                    color: var(--color-white-1);
+                    text-decoration: none;
+                    font-size: 3rem;
+                }
+            }
+        }
+        .footer-list{
+            list-style: none;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            @media only screen and (max-width: $bp-iphonex){
+               margin: .6rem 0;
+            }
+            &__item{
+                margin-right: 1rem;
+                text-transform: uppercase;
+                
+               a{
+                text-decoration: none;
+                color: var(--color-white-1);
+
+                &:hover{
+                    color: var(--color-white-2);
+                    transition: all .3s;
+                }
+               }
+            }
+        }
+        .copyright{
+            &__paragraph{
+                font-size: 1.4rem;
+            }
+        }
+        .social-links{
+            a{
+                text-decoration: none;
+                color: var(--color-white-1);
+                font-size: 3rem;
+                
+                &:not(:last-child){
+                    margin-right: 1rem;
+                }
+
+                &:hover{
+                    color: var(--color-white-2);
+                    transition: all .3s;
+                }
+            }
+        }
+    }
+}
